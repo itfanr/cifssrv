@@ -43,7 +43,6 @@ static struct {
 	{SMB2X_PROT, "\2SMB 2.???", "SMB2_22", SMB2X_PROT_ID},
 	{SMB30_PROT, "\2SMB 3.0", "SMB3_00", SMB30_PROT_ID},
 	{SMB302_PROT, "\2SMB 3.02", "SMB3_02", SMB302_PROT_ID},
-	{SMB311_PROT, "\2SMB 3.1.1", "SMB3_11", SMB311_PROT_ID},
 #endif
 };
 
@@ -398,7 +397,7 @@ int negotiate_dialect(void *buf)
 	int start_index, ret = BAD_PROT_ID;
 
 #ifdef CONFIG_CIFS_SMB2_SERVER
-	start_index = SMB311_PROT;
+	start_index = SMB302_PROT;
 #else
 	start_index = CIFS_PROT;
 #endif
